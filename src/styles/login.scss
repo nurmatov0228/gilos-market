@@ -68,11 +68,16 @@
   }
 }
 
-#unsubmit {
+.unsubmit {
   background-color: red;
   opacity: 0.8;
+  cursor: no-drop;
 }
 
-#submit {
+.submit {
   background-color: green;
+  cursor: pointer !important;
+}
+#checked {
+  cursor: pointer !important;
 }

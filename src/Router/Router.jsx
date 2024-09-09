@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "../Pages/Home";
 import NotFound from "../Pages/NotFound";
 import About from "../Pages/About";
@@ -88,22 +88,41 @@ const Router = ({ setCount }) => {
     setCart(deleteItems);
   };
 
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    if (token?.includes("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey")) {
+      navigate("/home");
+    } else {
+      navigate("/");
+    }
+  }, []);
+
   return (
     <Routes>
-      <Route path="/" element={<Home addGood={addGood} base={base} />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/login" element={<Login />} />
-      <Route
-        path="/cart"
-        element={<Cart removeGood={removeGood} cart={cart} />}
-      />
-      <Route path="/elementitem/:id" element={<Item base={base} />} />
-      <Route
-        path="/allitems"
-        element={<Allitems addGood={addGood} base={base} />}
-      />
-      <Route path="*" element={<NotFound />} />
+      {token?.length > 0 ? (
+        <Route path="/">
+          <Route
+            path="/home"
+            element={<Home addGood={addGood} base={base} />}
+          />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/cart"
+            element={<Cart removeGood={removeGood} cart={cart} />}
+          />
+          <Route path="/elementitem/:id" element={<Item base={base} />} />
+          <Route
+            path="/allitems"
+            element={<Allitems addGood={addGood} base={base} />}
+          />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      ) : (
+        <Route path="/" element={<Login />} />
+      )}
     </Routes>
   );
 };

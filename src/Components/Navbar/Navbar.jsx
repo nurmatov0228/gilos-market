@@ -5,6 +5,7 @@ import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import "./navbar.scss";
 import { Button } from "@mui/material";
+import { LogoutOutlined } from "@mui/icons-material";
 
 const Navbar = ({ count }) => {
   document.addEventListener("DOMContentLoaded", () => {
@@ -19,11 +20,11 @@ const Navbar = ({ count }) => {
   return (
     <div className="navbar">
       <div className="navbar__container">
-        <NavLink to="/" className="navbar__logo">
+        <NavLink to="/home" className="navbar__logo">
           BrandLogo
         </NavLink>
         <div className="navbar__links">
-          <NavLink to="/" className="navbar__link">
+          <NavLink to="/home" className="navbar__link">
             Bosh sahifa
           </NavLink>
           <NavLink to="/about" className="navbar__link">
@@ -32,8 +33,10 @@ const Navbar = ({ count }) => {
           <NavLink to="/contact" className="navbar__link">
             Aloqa
           </NavLink>
-          <NavLink to="/login" className="navbar__link">
-            Kirish
+          <NavLink className="navbar__link navbar__carticon">
+            <Button variant="text">
+              <LogoutOutlined />
+            </Button>
           </NavLink>
           <NavLink to="/cart" className="navbar__link navbar__carticon">
             <Button variant="text">

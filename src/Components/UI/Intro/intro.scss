@@ -76,13 +76,10 @@
     }
   }
   &__background {
+    display: none;
     img {
-      width: 584.28px;
-      height: 413px;
-      border-radius: 20px;
-      position: relative;
-      top: 0;
-      right: -794px;
+      width: none;
+      height: none;
     }
   }
 }

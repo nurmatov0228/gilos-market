@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="footer__container">
           <div className="footer__cards">
             <div className="footer__card">
-              <NavLink to={"/"}>
+              <NavLink to={"/home"}>
                 <h2 className="footer__logo">Brand Logo</h2>
               </NavLink>
               <p className="footer__text">Biz ijtimoiy tarmoqlarda</p>
