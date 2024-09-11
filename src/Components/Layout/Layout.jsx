@@ -30,9 +30,9 @@ const Layout = () => {
         <>
           <TopNav />
           <Navbar count={count} />
-          <div className="router">
+          {/* <div className="router">
             <Router setCount={setCount} />
-          </div>
+          </div> */}
           <Footer />
         </>
       ) : (

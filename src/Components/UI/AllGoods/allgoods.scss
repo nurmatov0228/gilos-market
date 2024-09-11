@@ -113,6 +113,12 @@
     line-height: 18px;
     color: #fafafa;
   }
+
+  &__NavLink {
+    text-decoration: none;
+    text-transform: none;
+    color: #fff !important;
+  }
 }
 
 .allgoods__btn {

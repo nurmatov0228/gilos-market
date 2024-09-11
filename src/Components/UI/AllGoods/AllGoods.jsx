@@ -19,11 +19,11 @@ const AllGoods = ({ base }) => {
           ))}
         </div>
 
-        <NavLink to={"/allitems"}>
-          <Button variant="contained" className="allgoods__btn" size="large">
+        <Button variant="contained" className="allgoods__btn" size="large">
+          <NavLink className={"discount__NavLink"} to={"/allitems"}>
             Barchasini ko'rish
-          </Button>
-        </NavLink>
+          </NavLink>
+        </Button>
       </div>
     </div>
   );

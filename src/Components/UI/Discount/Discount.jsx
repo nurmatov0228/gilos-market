@@ -10,11 +10,9 @@ const Discount = ({ base, addGood }) => {
       <div className="discount__container">
         <h1 className="discount__title">Yangi chegirmalar</h1>
         <Discounts base={base} addGood={addGood} />
-        <NavLink to={"/allitems"}>
-          <Button variant="contained" className="discount__btn" size="large">
-            Barchasini ko'rish
-          </Button>
-        </NavLink>
+        <Button variant="contained" className="discount__btn" size="large">
+          <NavLink className={"discount__NavLink"} to={"/allitems"}>Barchasini ko'rish</NavLink>
+        </Button>
       </div>
     </div>
   );

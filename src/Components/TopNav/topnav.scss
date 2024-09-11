@@ -58,8 +58,8 @@
   @media (max-width: 768px) {
     height: auto !important;
     flex-direction: column;
-    align-items: flex-start; // Align items to the start
-    padding: 0 8px; // Less padding for smaller screens
+    // align-items: flex-start; // Align items to the start
+    padding: 10px 8px; // Less padding for smaller screens
 
     &__container {
       height: auto; // Allow container to expand
@@ -82,6 +82,7 @@
     &__languages {
       font-size: 11px; // Further reduce font size for very small screens
       line-height: 16px; // Adjust line height for very small screens
+      text-align: center;
     }
 
     &__container {
