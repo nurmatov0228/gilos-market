@@ -54,6 +54,7 @@ const Login = () => {
             localStorage.setItem("token", token);
 
             toast.success(data?.firstName + " Xush kelibsiz");
+            navigate("/home");
           });
 
         const submit = document.querySelector(".unsubmit");
@@ -62,7 +63,6 @@ const Login = () => {
         setName();
         setEmail();
         setPassword();
-        navigate("/home");
       } else {
         toast.error("Email or password invialid", {
           position: "top-right",

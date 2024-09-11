@@ -16,8 +16,9 @@
     height: 100%;
     background-image: url("../../.././Assets/img/orqafonoqrang.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     display: flex !important;
+    border-radius: 20px;
   }
   &__texts {
     min-width: 280px !important;

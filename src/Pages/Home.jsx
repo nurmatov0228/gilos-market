@@ -1,4 +1,3 @@
-import React from "react";
 import Intro from "../Components/UI/Intro/Intro";
 import Catalogs from "../Components/UI/Catalogs/Catalogs";
 import Discount from "../Components/UI/Discount/Discount";
