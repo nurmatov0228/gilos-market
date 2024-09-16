@@ -1,30 +1,56 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./catalogs.scss";
-import VideogameAssetOutlinedIcon from "@mui/icons-material/VideogameAssetOutlined"; // aksesuar
-import SportsEsportsOutlinedIcon from "@mui/icons-material/SportsEsportsOutlined"; // joystik
-import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined"; // telefon
-import StorageOutlinedIcon from "@mui/icons-material/StorageOutlined"; // qo'shimcha xotira
-import CableOutlinedIcon from "@mui/icons-material/CableOutlined"; // usb
-import ComputerOutlinedIcon from "@mui/icons-material/ComputerOutlined"; // computer
-import LaptopMacOutlinedIcon from "@mui/icons-material/LaptopMacOutlined"; // laptop
-import WatchOutlinedIcon from "@mui/icons-material/WatchOutlined"; // watch
-import SdStorageOutlinedIcon from "@mui/icons-material/SdStorageOutlined"; // simkarta
-import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined"; // camera
-import HeadphonesOutlinedIcon from "@mui/icons-material/HeadphonesOutlined"; // quloqchinlar
-import HeadsetMicOutlinedIcon from "@mui/icons-material/HeadsetMicOutlined"; // o'yin quloqchinlari
+import VideogameAssetOutlinedIcon from "@mui/icons-material/VideogameAssetOutlined";
+import SportsEsportsOutlinedIcon from "@mui/icons-material/SportsEsportsOutlined";
+import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
+import StorageOutlinedIcon from "@mui/icons-material/StorageOutlined";
+import CableOutlinedIcon from "@mui/icons-material/CableOutlined";
+import ComputerOutlinedIcon from "@mui/icons-material/ComputerOutlined";
+import LaptopMacOutlinedIcon from "@mui/icons-material/LaptopMacOutlined";
+import WatchOutlinedIcon from "@mui/icons-material/WatchOutlined";
+import SdStorageOutlinedIcon from "@mui/icons-material/SdStorageOutlined";
+import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
+import HeadphonesOutlinedIcon from "@mui/icons-material/HeadphonesOutlined";
+import HeadsetMicOutlinedIcon from "@mui/icons-material/HeadsetMicOutlined";
 import Slider from "react-slick";
 
 const Catalogs = () => {
+  const [slidesToShow, setSlidesToShow] = useState(6);
+
+  useEffect(() => {
+    const updateSlidesToShow = () => {
+      const width = window.innerWidth;
+      if (width > 1300) {
+        setSlidesToShow(6);
+      } else if (width < 1300 && width > 1000) {
+        setSlidesToShow(4);
+      } else if (width < 1000 && width > 600) {
+        setSlidesToShow(3);
+      } else if (width < 500) {
+        setSlidesToShow(2);
+      } else if (width < 420) {
+        setSlidesToShow(2);
+      }
+    };
+
+    updateSlidesToShow();
+
+    window.addEventListener("resize", updateSlidesToShow);
+
+    return () => window.removeEventListener("resize", updateSlidesToShow);
+  }, []);
+
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 6,
+    slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
     autoplaySpeed: 0,
     cssEase: "linear",
   };
+
   return (
     <div className="catalogs">
       <div className="catalogs__container">

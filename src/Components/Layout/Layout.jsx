@@ -11,35 +11,63 @@ import Login from "../../Pages/Login";
 
 const Layout = () => {
   const token = localStorage.getItem("token");
+  const tokenjon = localStorage.getItem("tokenjon");
   const [count, setCount] = useState(0);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (token?.includes("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey")) {
+    if (
+      token?.includes("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey") &&
+      tokenjon?.includes("bahodirnurmatov")
+    ) {
       navigate("/home");
-    } else {
+    } else if (tokenjon?.includes("bahodirnurmatov")) {
       navigate("/");
+    } else {
+      navigate("/home");
     }
   }, []); // token o'zgarganda useEffect qayta ishga tushadi
+
+  const location = () => {
+    if (
+      token?.includes("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey") &&
+      tokenjon?.includes("bahodirnurmatov")
+    ) {
+      return (
+        <>
+          <TopNav />
+          <Navbar count={count} />
+          <div className="router">
+            <Router setCount={setCount} />
+          </div>
+          <Footer />
+        </>
+      );
+    } else if (tokenjon?.includes("bahodirnurmatov")) {
+      return (
+        <Routes>
+          <Route path="/" element={<Login />} />
+        </Routes>
+      );
+    } else {
+      return (
+        <>
+          <TopNav />
+          <Navbar count={count} />
+          <div className="router">
+            <Router setCount={setCount} />
+          </div>
+          <Footer />
+        </>
+      );
+    }
+  };
 
   return (
     <div>
       <ToastContainer className={"toastify"} />
-      {token ? (
-        <>
-          <TopNav />
-          <Navbar count={count} />
-          {/* <div className="router">
-            <Router setCount={setCount} />
-          </div> */}
-          <Footer />
-        </>
-      ) : (
-        <Routes>
-          <Route path="/" element={<Login />} />
-        </Routes>
-      )}
+      {location()}
     </div>
   );
 };

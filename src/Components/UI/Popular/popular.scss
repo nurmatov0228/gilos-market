@@ -25,6 +25,21 @@
     flex: none;
     order: 0;
     flex-grow: 0;
+
+    @media (max-width: 1200px) {
+      font-size: 32px;
+      line-height: 42px;
+    }
+
+    @media (max-width: 992px) {
+      font-size: 28px;
+      line-height: 36px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+      line-height: 32px;
+    }
   }
   &__link {
     text-decoration: none;

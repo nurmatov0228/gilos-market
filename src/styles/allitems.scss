@@ -9,5 +9,15 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 60px 50px;
+
+    @media (max-width: 768px) {
+      gap: 30px 25px;
+    }
+
+    .discountsitem {
+      @media (max-width: 401px) {
+        margin: 0 auto;
+      }
+    }
   }
 }

@@ -1,17 +1,38 @@
 import "../styles/cart.scss";
 import { Button } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CartItem from "../Components/UI/CartItem/CartItem";
+import { useState, useEffect } from "react";
 
 const Cart = ({ cart, removeGood }) => {
-  // const [mahsulotlar, setMah] = useState(0);
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  const tokenjon = localStorage.getItem("tokenjon");
 
-  // cart?.map((elem) => setMah((prev) => elem.quantity));
+  const [mahsulotlar, setMah] = useState(0);
+
+  useEffect(() => {
+    setMah(cart.length); // Mahsulotlar sonini yangilash
+  }, [cart]);
+
+  // `totalPrice`ni har bir mahsulotning narxini va miqdorini hisobga olib hisoblash
+  const totalPrice = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
+  const handleNavLinkClick = () => {
+    if (token && tokenjon && totalPrice) {
+      navigate("/home");
+    } else {
+      navigate("/signin");
+    }
+  };
 
   return (
     <div className="cart">
       <h1 className="cart__title">
-        {cart.length ? "Savatingiz" : "Savatda mahsulotlar yo'q"}
+        {mahsulotlar ? "Savatingiz" : "Savatda mahsulotlar yo'q"}
       </h1>
       <div className="cart__container">
         <div className="cart__left">
@@ -23,8 +44,10 @@ const Cart = ({ cart, removeGood }) => {
           <div className="cart__shop">
             <h4 className="cart__shop__title">Buyurtmangiz</h4>
             <div className="cart__shop__productcount">
-              <h4 className="cart__shop__counter">Mahsulotlar (0)</h4>
-              <p className="cart__shop__totalprice">0 ta</p>
+              <h4 className="cart__shop__counter">
+                Mahsulotlar ({mahsulotlar})
+              </h4>
+              <p className="cart__shop__totalprice">{mahsulotlar} ta</p>
             </div>
             <Button
               variant="outlined"
@@ -35,16 +58,17 @@ const Cart = ({ cart, removeGood }) => {
             </Button>
             <div className="cart__shop__totalprices">
               <h4 className="cart__shop__counter">Jami</h4>
-              <p className="cart__shop__totalprice">0 $</p>
+              <p className="cart__shop__totalprice">
+                {totalPrice.toFixed(2)} $
+              </p>
             </div>
             <Button
               variant="contained"
               color="primary"
               className="cart__shop__btn2"
+              onClick={handleNavLinkClick}
             >
-              <NavLink className={"cart__shop__link"} to={"/"}>
-                Rasmiylashtirishga o'tish
-              </NavLink>
+              Rasmiylashtirishga o'tish
             </Button>
           </div>
         </div>

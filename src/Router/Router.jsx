@@ -9,6 +9,7 @@ import Cart from "../Pages/Cart";
 import { Bounce, toast } from "react-toastify";
 import Item from "../Pages/Item";
 import Allitems from "../Pages/Allitems";
+import Signin from "../Pages/Signin";
 
 const Router = ({ setCount }) => {
   const [base, setBase] = useState([]);
@@ -102,6 +103,7 @@ const Router = ({ setCount }) => {
           path="/allitems"
           element={<Allitems addGood={addGood} base={base} />}
         />
+        <Route path="/signin" element={<Signin />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

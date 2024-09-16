@@ -22,7 +22,10 @@ const GoodsItem = ({ id, title, price, image, rating }) => {
         <div className="goodsitem__right">
           <div className="goodsitem__texts">
             <p className="cheap">${price}</p>
-            <Box sx={{ width: 200, display: "flex", alignItems: "center" }}>
+            <Box
+              className="goodsitem__box"
+              sx={{ width: 200, display: "flex", alignItems: "center" }}
+            >
               <Rating
                 name="text-feedback"
                 value={value}
@@ -32,7 +35,9 @@ const GoodsItem = ({ id, title, price, image, rating }) => {
                   <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
                 }
               />
-              <Box sx={{ ml: 2 }}>{rating?.count}</Box>
+              <Box className="goodsitem__box" sx={{ ml: 2 }}>
+                {rating?.count}
+              </Box>
             </Box>
           </div>
         </div>
