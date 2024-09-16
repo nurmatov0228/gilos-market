@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import CartItem from "../Components/UI/CartItem/CartItem";
 import { useState, useEffect } from "react";
 
-const Cart = ({ cart, removeGood }) => {
+const Cart = ({ cart, removeGood, add, remove }) => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const tokenjon = localStorage.getItem("tokenjon");
@@ -36,7 +36,13 @@ const Cart = ({ cart, removeGood }) => {
       <div className="cart__container">
         <div className="cart__left">
           {cart?.map((elem) => (
-            <CartItem removeGood={removeGood} key={elem?.id} {...elem} />
+            <CartItem
+              removeGood={removeGood}
+              key={elem?.id}
+              {...elem}
+              add={add}
+              remove={remove}
+            />
           ))}
         </div>
         <div className="cart__right">

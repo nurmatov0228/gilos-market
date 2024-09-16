@@ -14,6 +14,8 @@ const CartItem = ({
   image,
   quantity,
   removeGood,
+  add,
+  remove,
 }) => {
   return (
     <div className="cartitem">
@@ -26,9 +28,19 @@ const CartItem = ({
           <div className="cartitem__box__bottom">
             <p className="cartitem__box__name">{category}</p>
             <div className="cartitem__box__count">
-              <RemoveOutlinedIcon className="cartitem__box__icon icons" />
+              <RemoveOutlinedIcon
+                onClick={() => {
+                  remove(id, title, price, description, category, image);
+                }}
+                className="cartitem__box__icon icons"
+              />
               <p className="cartitem__box__quantity">{quantity}</p>
-              <AddOutlinedIcon className="cartitem__box__icon icons" />
+              <AddOutlinedIcon
+                onClick={() => {
+                  add(id, title, price, description, category, image);
+                }}
+                className="cartitem__box__icon icons"
+              />
             </div>
           </div>
         </div>

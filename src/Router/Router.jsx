@@ -88,6 +88,83 @@ const Router = ({ setCount }) => {
     setCart(deleteItems);
   };
 
+  const add = (id, title, price, description, category, image) => {
+    const itemIndex = cart.findIndex((elem) => elem.id === id);
+
+    if (itemIndex > 0) {
+      setCount((prev) => prev + 1);
+      const addCount = cart.map((elem) => {
+        if (elem.id === id) {
+          return { ...elem, quantity: elem?.quantity + 1 };
+        } else {
+          return { ...elem };
+        }
+      });
+      setCart(addCount);
+    } else {
+      const addCount = cart.map((elem) => {
+        if (elem.id === id) {
+          return { ...elem, quantity: elem?.quantity + 1 };
+        } else {
+          return { ...elem };
+        }
+      });
+      setCart(addCount);
+    }
+  };
+
+  // const remove = (id, title, price, description, category, image) => {
+  //   const itemIndex = cart.findIndex((elem) => elem.id === id);
+
+  //   const itemquantity = cart.findIndex(
+  //     (elem) => elem.id === id,
+  //     elem?.quantity
+  //   );
+
+  //   if (itemquantity) {
+  //     if (itemIndex > 0) {
+  //       setCount((prev) => prev - 1);
+  //       const removeCount = cart.map((elem) => {
+  //         if (elem.id === id) {
+  //           return { ...elem, quantity: elem?.quantity - 1 };
+  //         } else {
+  //           return { ...elem };
+  //         }
+  //       });
+  //       setCart(removeCount);
+  //     } else {
+  //       const removeCount = cart.map((elem) => {
+  //         if (elem.id === id) {
+  //           return { ...elem, quantity: elem?.quantity - 1 };
+  //         } else {
+  //           return { ...elem };
+  //         }
+  //       });
+  //       setCart(removeCount);
+  //     }
+  //   }
+  // };
+
+  const remove = (id, title, price, description, category, image) => {
+    const itemIndex = cart.findIndex((elem) => elem.id === id);
+
+    if (itemIndex > -1) {
+      const updatedCart = cart
+        .map((elem) => {
+          if (elem.id === id) {
+            // Mahsulot miqdorini kamaytirish faqat miqdor 1 dan katta bo'lsa
+            const newQuantity =
+              elem.quantity > 1 ? elem.quantity - 1 : elem.quantity;
+            return { ...elem, quantity: newQuantity };
+          }
+          return elem;
+        })
+        .filter((elem) => elem.quantity > 0); // Miqdori 0 dan katta bo'lgan mahsulotlarni saqlash
+
+      setCart(updatedCart);
+    }
+  };
+
   return (
     <Routes>
       <Route path="/">
@@ -96,7 +173,14 @@ const Router = ({ setCount }) => {
         <Route path="/contact" element={<Contact />} />
         <Route
           path="/cart"
-          element={<Cart removeGood={removeGood} cart={cart} />}
+          element={
+            <Cart
+              remove={remove}
+              add={add}
+              removeGood={removeGood}
+              cart={cart}
+            />
+          }
         />
         <Route path="/elementitem/:id" element={<Item base={base} />} />
         <Route
