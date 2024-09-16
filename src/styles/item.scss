@@ -1,3 +1,173 @@
+// .item {
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   box-sizing: border-box;
+
+//   &__container {
+//     margin-top: 50px;
+//     width: 80%;
+//     height: 603px;
+//     display: flex;
+//     gap: 80px;
+//   }
+
+//   &__left {
+//     width: 700px;
+//     height: 603px;
+//     display: flex;
+//     gap: 30px;
+//   }
+
+//   &__imageleft {
+//     width: 170px;
+//     height: 603px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: space-between;
+
+//     &__image {
+//       background-color: #f5f5f5 !important;
+//     }
+//   }
+//   &__imageright {
+//     width: 500px !important;
+//     height: 600px !important;
+//     background-color: #f5f5f5;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     box-sizing: border-box;
+
+//     img {
+//       max-width: 500px;
+//       max-height: 301px;
+//     }
+//   }
+
+//   &__right {
+//     width: 452px;
+//     height: 486px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: start;
+//     justify-content: space-between;
+//     box-sizing: border-box;
+
+//     hr {
+//       width: 100% !important;
+//       z-index: 9999;
+//     }
+//   }
+
+//   &__top {
+//     width: 452px;
+//     height: 206px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: start;
+//     justify-content: space-between;
+
+//     &__title {
+//       width: 100%;
+//       height: 50px;
+//       font-family: "Poppins";
+//       font-style: normal;
+//       font-weight: 600;
+//       font-size: 24px;
+//       line-height: 25px;
+//     }
+
+//     &__box {
+//       width: 236px !important;
+//       height: 21px;
+//       display: flex;
+//       justify-content: space-between;
+//       box-sizing: border-box;
+//     }
+
+//     &__span {
+//       font-family: "Poppins" !important;
+//       font-style: normal !important;
+//       font-weight: 400 !important;
+//       font-size: 14px !important;
+//       line-height: 21px !important;
+//       color: #000000 !important;
+//       opacity: 0.5 !important;
+//     }
+
+//     h3 {
+//       font-family: "Inter";
+//       font-style: normal;
+//       font-weight: 400;
+//       font-size: 24px;
+//       line-height: 24px;
+//       letter-spacing: 0.03em;
+//       color: #000000;
+//     }
+//     &__text {
+//       width: 388px;
+//       height: 63px;
+//       font-family: "Poppins";
+//       font-style: normal;
+//       font-weight: 400;
+//       font-size: 14px;
+//       line-height: 21px;
+//       color: #000000;
+//     }
+//   }
+//   &__bottom {
+//     width: 452px;
+//     height: 232px;
+//     padding: 25px 24px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     border-radius: 4px;
+//     border: 1px solid #00000080;
+
+//     &__top,
+//     &__bottom {
+//       width: 400px;
+//       height: 50px;
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+//     }
+//     &__texts {
+//       width: 345px;
+//       height: 50px;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: space-between;
+//       box-sizing: content-box;
+
+//       h4 {
+//         font-family: "Poppins";
+//         font-style: normal;
+//         font-weight: 500;
+//         font-size: 16px;
+//         line-height: 24px;
+//       }
+//       p {
+//         font-family: "Poppins";
+//         font-style: normal;
+//         font-weight: 500;
+//         font-size: 12px;
+//         line-height: 18px;
+//       }
+//     }
+//   }
+
+//   &__icon {
+//     width: 40px !important;
+//     height: 40px !important;
+//   }
+// }
+
 .item {
   width: 100%;
   display: flex;
@@ -6,24 +176,43 @@
   justify-content: center;
   box-sizing: border-box;
 
+  // Ensure no horizontal scrolling by setting max-width
+  max-width: 1200px;
+  margin: 0 auto;
+
   &__container {
     margin-top: 50px;
-    width: 80%;
-    height: 603px;
+    width: 100%;
+    height: auto;
     display: flex;
-    gap: 80px;
+    gap: 20px;
+    box-sizing: border-box;
+
+    @media (max-width: 1275px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__left {
-    width: 700px;
-    height: 603px;
+    height: auto;
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    gap: 20px;
+
+    @media (max-width: 1275px) {
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
   }
 
   &__imageleft {
-    width: 170px;
-    height: 603px;
+    width: 100%;
+    max-width: 170px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,10 +221,17 @@
     &__image {
       background-color: #f5f5f5 !important;
     }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
+
   &__imageright {
-    width: 500px !important;
-    height: 600px !important;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
     background-color: #f5f5f5;
     display: flex;
     align-items: center;
@@ -43,19 +239,21 @@
     box-sizing: border-box;
 
     img {
-      max-width: 500px;
-      max-height: 301px;
+      max-width: 100%;
+      height: auto;
     }
   }
 
   &__right {
-    width: 452px;
-    height: 486px;
+    width: 100%;
+    max-width: 452px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: space-between;
     box-sizing: border-box;
+    gap: 30px;
 
     hr {
       width: 100% !important;
@@ -64,8 +262,9 @@
   }
 
   &__top {
-    width: 452px;
-    height: 206px;
+    width: 100%;
+    max-width: 452px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -73,17 +272,21 @@
 
     &__title {
       width: 100%;
-      height: 50px;
       font-family: "Poppins";
       font-style: normal;
       font-weight: 600;
       font-size: 24px;
       line-height: 25px;
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
     }
 
     &__box {
-      width: 236px !important;
-      height: 21px;
+      width: 100%;
+      max-width: 236px;
+      height: auto;
       display: flex;
       justify-content: space-between;
       box-sizing: border-box;
@@ -108,38 +311,47 @@
       letter-spacing: 0.03em;
       color: #000000;
     }
+
     &__text {
-      width: 388px;
-      height: 63px;
+      width: 100%;
+      max-width: 388px;
       font-family: "Poppins";
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
       line-height: 21px;
       color: #000000;
+
+      @media (max-width: 768px) {
+        font-size: 12px;
+      }
     }
   }
+
   &__bottom {
-    width: 452px;
-    height: 232px;
+    width: 100%;
+    max-width: 452px;
+    height: auto;
     padding: 25px 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border-radius: 4px;
     border: 1px solid #00000080;
+    gap: 20px;
 
     &__top,
     &__bottom {
-      width: 400px;
-      height: 50px;
+      width: 100%;
+      height: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
+
     &__texts {
-      width: 345px;
-      height: 50px;
+      width: 100%;
+      max-width: 345px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -151,13 +363,22 @@
         font-weight: 500;
         font-size: 16px;
         line-height: 24px;
+
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
       }
+
       p {
         font-family: "Poppins";
         font-style: normal;
         font-weight: 500;
         font-size: 12px;
         line-height: 18px;
+
+        @media (max-width: 768px) {
+          font-size: 10px;
+        }
       }
     }
   }
@@ -165,5 +386,90 @@
   &__icon {
     width: 40px !important;
     height: 40px !important;
+  }
+}
+
+// Media queries for responsive design
+@media (max-width: 1200px) {
+  .item {
+    &__container {
+      gap: 20px;
+    }
+
+    &__left {
+      gap: 15px;
+    }
+
+    &__imageleft {
+      max-width: 150px;
+    }
+
+    &__imageright {
+      max-width: 400px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .item {
+    &__container {
+      flex-direction: column;
+    }
+
+    &__left {
+      gap: 10px;
+    }
+
+    // &__right {
+    //   max-width: 100%;
+    // }
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    &__imageleft {
+      display: none;
+    }
+
+    &__imageright {
+      max-width: 300px;
+    }
+
+    &__top__title {
+      font-size: 20px;
+    }
+
+    &__top__text {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .item {
+    &__container {
+      width: 87%;
+    }
+
+    // &__bottom {
+    //   min-width: 80%;
+    // }
+
+    &__top__title {
+      font-size: 18px;
+    }
+
+    &__top__text {
+      font-size: 10px;
+    }
+
+    &__bottom__texts h4 {
+      font-size: 14px;
+    }
+
+    &__bottom__texts p {
+      font-size: 10px;
+    }
   }
 }

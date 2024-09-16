@@ -15,7 +15,6 @@ const Cart = ({ cart, removeGood }) => {
     setMah(cart.length); // Mahsulotlar sonini yangilash
   }, [cart]);
 
-  // `totalPrice`ni har bir mahsulotning narxini va miqdorini hisobga olib hisoblash
   const totalPrice = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0

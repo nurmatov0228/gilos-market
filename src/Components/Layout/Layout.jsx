@@ -66,7 +66,7 @@ const Layout = () => {
 
   return (
     <div>
-      <ToastContainer className={"toastify"} />
+      <ToastContainer className="toastify" />
       {location()}
     </div>
   );
