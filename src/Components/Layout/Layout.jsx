@@ -27,7 +27,7 @@ const Layout = () => {
     } else {
       navigate("/home");
     }
-  }, []); // token o'zgarganda useEffect qayta ishga tushadi
+  }, [navigate, token, tokenjon]); 
 
   const location = () => {
     if (
