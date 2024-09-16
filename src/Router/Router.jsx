@@ -113,38 +113,6 @@ const Router = ({ setCount }) => {
     }
   };
 
-  // const remove = (id, title, price, description, category, image) => {
-  //   const itemIndex = cart.findIndex((elem) => elem.id === id);
-
-  //   const itemquantity = cart.findIndex(
-  //     (elem) => elem.id === id,
-  //     elem?.quantity
-  //   );
-
-  //   if (itemquantity) {
-  //     if (itemIndex > 0) {
-  //       setCount((prev) => prev - 1);
-  //       const removeCount = cart.map((elem) => {
-  //         if (elem.id === id) {
-  //           return { ...elem, quantity: elem?.quantity - 1 };
-  //         } else {
-  //           return { ...elem };
-  //         }
-  //       });
-  //       setCart(removeCount);
-  //     } else {
-  //       const removeCount = cart.map((elem) => {
-  //         if (elem.id === id) {
-  //           return { ...elem, quantity: elem?.quantity - 1 };
-  //         } else {
-  //           return { ...elem };
-  //         }
-  //       });
-  //       setCart(removeCount);
-  //     }
-  //   }
-  // };
-
   const remove = (id, title, price, description, category, image) => {
     const itemIndex = cart.findIndex((elem) => elem.id === id);
 
