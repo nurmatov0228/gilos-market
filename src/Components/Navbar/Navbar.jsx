@@ -88,6 +88,7 @@ const Navbar = ({ count }) => {
       <div className="navbar__container">
         <NavLink to="/home" className="navbar__logo">
           <img src={cherry} className="navbar__logo__img" />
+          ilos
         </NavLink>
         <div
           className={`navbar__links ${

@@ -5,6 +5,7 @@ import ayol from "../../../Assets/img/ayol.png";
 import kalonka from "../../../Assets/img/kalonka.png";
 import atir from "../../../Assets/img/atir.png";
 import { Button } from "@mui/material";
+import { NavLink } from "react-router-dom";
 
 const NewGoods = () => {
   return (
@@ -22,7 +23,9 @@ const NewGoods = () => {
                 Black and White version of the PS5 coming out on sale.
               </p>
               <Button variant="text" size="medium" className="newgoods__btn">
-                Shop Now
+                <NavLink className={"newgoods__btn__link"} to={"/allitems"}>
+                  Shop Now
+                </NavLink>
               </Button>
             </div>
           </div>
@@ -35,7 +38,9 @@ const NewGoods = () => {
                   Featured woman collections that give you another vibe.
                 </p>
                 <Button variant="text" size="medium" className="newgoods__btn">
-                  Shop Now
+                  <NavLink className={"newgoods__btn__link"} to={"/allitems"}>
+                    Shop Now
+                  </NavLink>
                 </Button>
               </div>
             </div>
@@ -50,7 +55,9 @@ const NewGoods = () => {
                     size="medium"
                     className="newgoods__btn"
                   >
-                    Shop Now
+                    <NavLink className={"newgoods__btn__link"} to={"/allitems"}>
+                      Shop Now
+                    </NavLink>
                   </Button>
                 </div>
               </div>
@@ -64,7 +71,9 @@ const NewGoods = () => {
                     size="medium"
                     className="newgoods__btn"
                   >
-                    Shop Now
+                    <NavLink className={"newgoods__btn__link"} to={"/allitems"}>
+                      Shop Now
+                    </NavLink>
                   </Button>
                 </div>
               </div>
