@@ -13,11 +13,11 @@ const TopNav = () => {
         <p className="topnav__center topnav__text">
           Buyurtmalaringizni bepul yetkazib beramiz - atiga 1 kun ichida
         </p>
-        <select className="topnav__languages" name="uz">
+        {/* <select className="topnav__languages" name="uz">
           <option value="en">English</option>
           <option value="ru">Русский</option>
           <option value="uz">Uzbek</option>
-        </select>
+        </select> */}
       </div>
     </div>
   );
