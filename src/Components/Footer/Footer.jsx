@@ -35,7 +35,11 @@ const Footer = () => {
             <div className="footer__card">
               <h3 className="footer__subtitle">Aloqa</h3>
               <p className="footer__subtext">Manzil: Toshkent sh</p>
-              <p className="footer__subtext">toshmat@gmai.com</p>
+              <p className="footer__subtext">
+                <a href="mailto:bahodirnur06@gmail.com">
+                  bahodirnur06@gmail.com
+                </a>
+              </p>
               <p className="footer__subtext">
                 <a href="tel:+998951884308">+998951884308</a>
               </p>

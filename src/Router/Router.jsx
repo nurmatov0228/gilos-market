@@ -91,25 +91,19 @@ const Router = ({ setCount }) => {
   const add = (id, title, price, description, category, image) => {
     const itemIndex = cart.findIndex((elem) => elem.id === id);
 
-    if (itemIndex > 0) {
-      setCount((prev) => prev + 1);
-      const addCount = cart.map((elem) => {
+    if (itemIndex > -1) {
+      const updatedCart = cart.map((elem) => {
         if (elem.id === id) {
-          return { ...elem, quantity: elem?.quantity + 1 };
-        } else {
-          return { ...elem };
+          return { ...elem, quantity: (elem?.quantity || 0) + 1 };
         }
+        return elem;
       });
-      setCart(addCount);
+      setCart(updatedCart);
     } else {
-      const addCount = cart.map((elem) => {
-        if (elem.id === id) {
-          return { ...elem, quantity: elem?.quantity + 1 };
-        } else {
-          return { ...elem };
-        }
-      });
-      setCart(addCount);
+      setCart([
+        ...cart,
+        { id, title, price, description, category, image, quantity: 1 },
+      ]);
     }
   };
 
@@ -120,7 +114,6 @@ const Router = ({ setCount }) => {
       const updatedCart = cart
         .map((elem) => {
           if (elem.id === id) {
-            // Mahsulot miqdorini kamaytirish faqat miqdor 1 dan katta bo'lsa
             const newQuantity =
               elem.quantity > 1 ? elem.quantity - 1 : elem.quantity;
             return { ...elem, quantity: newQuantity };

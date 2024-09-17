@@ -12,7 +12,7 @@ const Cart = ({ cart, removeGood, add, remove }) => {
   const [mahsulotlar, setMah] = useState(0);
 
   useEffect(() => {
-    setMah(cart.length); // Mahsulotlar sonini yangilash
+    setMah(cart.length);
   }, [cart]);
 
   const totalPrice = cart.reduce(

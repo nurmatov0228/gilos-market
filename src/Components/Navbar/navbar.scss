@@ -121,6 +121,11 @@
       flex-grow: 0;
       text-transform: capitalize;
     }
+
+    &__link {
+      display: flex !important;
+      width: 100%;
+    }
   }
 
   &__call {
