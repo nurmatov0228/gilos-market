@@ -27,7 +27,7 @@ const Layout = () => {
     } else {
       navigate("/home");
     }
-  }, [navigate, token, tokenjon]);
+  }, []);
 
   const location = () => {
     if (
