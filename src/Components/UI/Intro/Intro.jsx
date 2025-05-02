@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import React from "react";
 import Slider from "react-slick";
 import hpnoutbuk from "../../../Assets/img/hpnoutbuk.png";
-import orqafonnoutbuk from "../../../Assets/img/orqafonnoutbuk.png";
+// import orqafonnoutbuk from "../../../Assets/img/orqafonnoutbuk.png";
 import "./intro.scss";
 
 const Intro = () => {
@@ -39,7 +39,7 @@ const Intro = () => {
                 <img src={hpnoutbuk} alt="" />
               </div>
               <div className="intro__background">
-                <img src={orqafonnoutbuk} alt="" />
+                <img src="" alt="" />
               </div>
             </div>
             <div className="intro__slide">
@@ -60,7 +60,7 @@ const Intro = () => {
                 <img src={hpnoutbuk} alt="" />
               </div>
               <div className="intro__background">
-                <img src={orqafonnoutbuk} alt="" />
+                <img src="" alt="" />
               </div>
             </div>
             <div className="intro__slide">
@@ -81,7 +81,7 @@ const Intro = () => {
                 <img src={hpnoutbuk} alt="" />
               </div>
               <div className="intro__background">
-                <img src={orqafonnoutbuk} alt="" />
+                <img src="" alt="" />
               </div>
             </div>
             <div className="intro__slide">
@@ -102,7 +102,7 @@ const Intro = () => {
                 <img src={hpnoutbuk} alt="" />
               </div>
               <div className="intro__background">
-                <img src={orqafonnoutbuk} alt="" />
+                <img src="" alt="" />
               </div>
             </div>
             <div className="intro__slide">
@@ -123,7 +123,7 @@ const Intro = () => {
                 <img src={hpnoutbuk} alt="" />
               </div>
               <div className="intro__background">
-                <img src={orqafonnoutbuk} alt="" />
+                <img src="" alt="" />
               </div>
             </div>
           </Slider>

@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 import { LogoutOutlined } from "@mui/icons-material";
 import { toast } from "react-toastify";
 import "./navbar.scss";
-import cherry from "../../Assets/img/cherry.jpg";
+// import cherry from "../../Assets/img/cherry.jpg";
 
 const Navbar = ({ count }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -87,7 +87,7 @@ const Navbar = ({ count }) => {
     <div className="navbar">
       <div className="navbar__container">
         <NavLink to="/home" className="navbar__logo">
-          <img src={cherry} className="navbar__logo__img" />
+          <img src="" className="navbar__logo__img" />
           ilos
         </NavLink>
         <div

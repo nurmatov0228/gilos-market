@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/item.scss";
-import asus2 from "../Assets/img/asus2.png";
+// import asus2 from "../Assets/img/asus2.png";
 import asus3 from "../Assets/img/asus3.png";
 import asus4 from "../Assets/img/asus4.png";
 import Box from "@mui/material/Box";
@@ -24,7 +24,7 @@ const Item = ({ base }) => {
       <div className="item__container">
         <div className="item__left">
           <div className="item__imageleft">
-            <img src={asus2} alt="" className="item__imageleft__image" />
+            <img src={asus3} alt="" className="item__imageleft__image" />
             <img src={asus4} alt="" className="item__imageleft__image" />
             <img src={asus3} alt="" className="item__imageleft__image" />
             <img src={asus4} alt="" className="item__imageleft__image" />
